@@ -24,7 +24,15 @@ const Header: React.FC = () => {
   return (
     <header>
       <div className="container text-6xl">
-        HEADER
+        <div className="text-center tracking-wide text-2xl leading-normal md:text-4xl md:leading-normal font-semibold">
+          deskundig,
+        </div>
+        <div className="text-center tracking-wide text-2xl leading-normal md:text-4xl md:leading-normal font-semibold">
+          stijlvol,
+        </div>
+        <div className="text-center tracking-wide text-3xl leading-normal md:text-5xl md:leading-normal font-bold italic">
+          Twents vakmanschap
+        </div>
         {/* <div className="py-4 md:pt-6 md:pb-0">
 					<Logo className="mx-auto" link="/" />
 				</div>

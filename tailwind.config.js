@@ -5,11 +5,11 @@ module.exports = {
     "./src/components/**/*.ts",
     "./src/components/**/*.tsx",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       fontFamily: {
-        sans: '"Yusei Magic", sans-serif',
+        sans: '"Open Sans", sans-serif',
       },
       colors: {
         primary: {
