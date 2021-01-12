@@ -1,0 +1,26 @@
+/* purgecss start ignore */
+@tailwind base;
+
+* {
+	outline-color: rgba(74, 85, 104, var(--text-opacity));
+}
+
+html {
+	font-family: "Open Sans", sans-serif;
+	background-color: rgba(247, 250, 252, var(--bg-opacity));
+	color: #303030;
+	overflow-y: scroll;
+}
+
+@tailwind components;
+
+.container {
+	@apply max-w-6xl mx-auto px-6;
+}
+
+.container p {
+	@apply mt-4;
+}
+/* purgecss end ignore */
+
+@tailwind utilities;
