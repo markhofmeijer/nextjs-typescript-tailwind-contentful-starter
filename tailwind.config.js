@@ -14,11 +14,11 @@ module.exports = {
       colors: {
         primary: {
           lighter: "#d3d1c5",
-          default: "#afab96",
+          DEFAULT: "#afab96",
           dark: "#958f72",
         },
         secondary: {
-          default: "#e5e5e5",
+          DEFAULT: "#e5e5e5",
         },
       },
     },

@@ -82,14 +82,6 @@ const Header: React.FC = () => {
           ) : null}
         </div>
       </div>
-
-      {/* <div className="py-4 md:pt-6 md:pb-0">
-					<Logo className="mx-auto" link="/" />
-				</div>
-				
-
-				 */}
-      {/* </div> */}
     </header>
   )
 }

@@ -10,12 +10,6 @@ interface PropTypes {
 const Logo: React.FC<PropTypes> = props => {
   const alt = props.alt ? props.alt : "logo"
   const logo = (
-    //  <Image
-    //    fixed={file.childImageSharp.fixed}
-    //    alt={alt}
-    //    className={props.className}
-    //    style={{ display: "inherit" }}
-    //  />
     <div
       style={{
         display: "flex",
