@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 // import React from "react"
 
-import { Logo } from "@/components/Logo"
-import { NavigationItems } from "@/components/Navigation"
+import { Logo } from "@/components/elements/Logo"
+import { NavigationItems } from "@/components/modules/Navigation"
 
 const Header: React.FC = () => {
   const [drawerIsVisible, setDrawerIsVisible] = useState(false)

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { INavigationItems } from "@/common/types"
+import { INavigationItems } from "@/types/navigation"
 import { NavigationItem } from "./NavigationItem"
 
 const NavigationItems: React.FC<INavigationItems> = props => {

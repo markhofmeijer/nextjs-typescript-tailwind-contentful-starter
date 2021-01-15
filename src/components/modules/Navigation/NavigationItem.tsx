@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 
-import { INavigationItem } from "@/common/types"
+import { INavigationItem } from "@/types/navigation"
 
 const NavigationItem: React.FC<INavigationItem> = props => {
   const linkContainerClasses =
