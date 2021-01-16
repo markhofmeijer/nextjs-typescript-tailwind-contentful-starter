@@ -3,12 +3,12 @@ import { EntryCollection } from "contentful"
 import getClient from "../contentful"
 import navigationItemParser from "./navigationItemParser"
 import { ISiteNavigationFields } from "@/types/contentful"
-import { NavigationItem } from "@/types/navigation"
+import { INavigationItem } from "@/types/navigation"
 
 export default async function getNavigationItems(
   levels = 2,
   code = "root"
-): Promise<NavigationItem[]> {
+): Promise<INavigationItem[]> {
   if (levels < 2)
     throw new Error(
       "NavigationItems - Specified level cannot be less than 2 due to required linked page objects"

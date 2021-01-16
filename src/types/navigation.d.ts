@@ -1,19 +1,19 @@
-export type NavigationItem = {
+export interface INavigationItem {
   id: string
   name: string
   code: string | null
   slug: string
-  subItems: NavigationItem[]
+  subItems: INavigationItem[]
 }
 
-type NavProps = {
+interface INavProps {
   level?: number
 }
 
-export type NavItemsProps = NavProps & {
-  items: NavigationItem[]
+export interface INavItemsProps extends INavProps {
+  items: INavigationItem[]
 }
 
-export type NavItemProps = NavProps & {
-  item: NavigationItem
+export interface INavItemProps extends INavProps {
+  item: INavigationItem
 }

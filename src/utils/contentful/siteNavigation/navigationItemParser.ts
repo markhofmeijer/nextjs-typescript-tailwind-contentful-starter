@@ -1,12 +1,12 @@
 import { Entry } from "contentful"
 
 import { ISiteNavigationFields } from "@/types/contentful"
-import { NavigationItem } from "@/types/navigation"
+import { INavigationItem } from "@/types/navigation"
 
 export default function navigationItemParser({
   sys,
   fields,
-}: Entry<ISiteNavigationFields>): NavigationItem {
+}: Entry<ISiteNavigationFields>): INavigationItem {
   if (!fields) return
 
   const slug = fields.page && fields.page.sys.type !== "Link" ? fields.page.fields.url : null

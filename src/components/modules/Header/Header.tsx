@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
-import { PageMetadata } from "@/types/app"
+import { IAppData } from "@/types/app"
 import { Logo } from "@/components/elements/Logo"
 import { NavItems } from "@/components/modules/Navigation"
 
-const Header: React.FC<PageMetadata> = ({ pageMetadata }) => {
+const Header: React.FC<IAppData> = ({ data }) => {
   const [drawerIsVisible, setDrawerIsVisible] = useState(false)
   const drawerToggleHandler = () => setDrawerIsVisible(!drawerIsVisible)
 
@@ -15,7 +15,7 @@ const Header: React.FC<PageMetadata> = ({ pageMetadata }) => {
           <Logo link="/" />
         </div>
         <nav className="hidden md:block">
-          <NavItems items={pageMetadata.navItems} />
+          <NavItems items={data.page.navItems} />
         </nav>
 
         <div className="relative md:hidden mx-6 mb-3">
@@ -40,7 +40,7 @@ const Header: React.FC<PageMetadata> = ({ pageMetadata }) => {
           {drawerIsVisible ? (
             <div className="absolute left-0 right-0 z-50 pt-3">
               <nav className="bg-gray-100 bg-opacity-90 border-t-4 border-primary p-3 text-black">
-                <NavItems items={pageMetadata.navItems} />
+                <NavItems items={data.page.navItems} />
               </nav>
             </div>
           ) : null}

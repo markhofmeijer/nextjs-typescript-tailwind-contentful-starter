@@ -1,7 +1,7 @@
-import { NavigationItem } from "@/types/navigation"
+import { IPage } from "@/types/page"
 
-export type PageMetadata = {
-  pageMetadata: {
-    navItems: NavigationItem[]
+export interface IAppData {
+  data: {
+    page: IPage
   }
 }
