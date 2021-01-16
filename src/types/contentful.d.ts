@@ -76,7 +76,114 @@ export interface IProduct extends Entry<IProductFields> {
   }
 }
 
-export type CONTENT_TYPE = "page" | "product"
+export interface ISiteMetadataFields {
+  /** Bedrijfsnaam */
+  client_name: string
+
+  /** Adres */
+  client_address?: string | undefined
+
+  /** Postcode */
+  client_zipCode?: string | undefined
+
+  /** Plaatsnaam */
+  client_city?: string | undefined
+
+  /** Telefoonnummer */
+  client_phone?: string | undefined
+
+  /** E-mailadres */
+  client_email: string
+
+  /** Bankrekeningnummer */
+  client_bankAccount?: string | undefined
+
+  /** Openingstijden */
+  client_openingHours?: string | undefined
+
+  /** Webshop */
+  webshop?: string | undefined
+
+  /** Social media - LinkedIn */
+  client_socialMediaLinkedIn?: string | undefined
+
+  /** Social media - Twitter */
+  client_socialMediaTwitter?: string | undefined
+
+  /** Social media - Facebook */
+  client_socialMediaFacebook?: string | undefined
+
+  /** Social media - Instagram */
+  client_socialMediaInstagram?: string | undefined
+
+  /** Social media - YouTube */
+  client_socialMediaYouTube?: string | undefined
+
+  /** SEO - Titel */
+  title: string
+
+  /** SEO - Omschrijving */
+  description: string
+
+  /** SEO - URL */
+  url: string
+
+  /** SEO - Image */
+  image: Asset
+
+  /** SEO - Zoekwoorden */
+  keywords?: string[] | undefined
+}
+
+export interface ISiteMetadata extends Entry<ISiteMetadataFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: "siteMetadata"
+        linkType: "ContentType"
+        type: "Link"
+      }
+    }
+  }
+}
+
+export interface ISiteNavigationFields {
+  /** Naam */
+  name: string
+
+  /** Code */
+  code?: string | undefined
+
+  /** Pagina */
+  page?: IPage | undefined
+
+  /** Subnavigatie */
+  subNavItems?: ISiteNavigation[] | undefined
+}
+
+export interface ISiteNavigation extends Entry<ISiteNavigationFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: "siteNavigation"
+        linkType: "ContentType"
+        type: "Link"
+      }
+    }
+  }
+}
+
+export type CONTENT_TYPE = "page" | "product" | "siteMetadata" | "siteNavigation"
 
 export type LOCALE_CODE = "nl"
 

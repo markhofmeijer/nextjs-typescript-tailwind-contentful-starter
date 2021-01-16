@@ -1,48 +1,12 @@
 import React, { useState } from "react"
-// import React from "react"
 
+import { PageMetadata } from "@/types/app"
 import { Logo } from "@/components/elements/Logo"
-import { NavigationItems } from "@/components/modules/Navigation"
+import { NavItems } from "@/components/modules/Navigation"
 
-const Header: React.FC = () => {
+const Header: React.FC<PageMetadata> = ({ pageMetadata }) => {
   const [drawerIsVisible, setDrawerIsVisible] = useState(false)
   const drawerToggleHandler = () => setDrawerIsVisible(!drawerIsVisible)
-
-  //   const { site } = useStaticQuery(graphql`
-  //   	query {
-  //   		site {
-  //   			siteMetadata {
-  //   				navigationItems {
-  //   					name
-  //   					link
-  //   				}
-  //   			}
-  //   		}
-  //   	}
-  //   `)
-
-  const navItems: any = [
-    {
-      name: "Over ons",
-      link: "/over-ons",
-    },
-    {
-      name: "Tafels",
-      link: "/tafels",
-    },
-    {
-      name: "Buitenmeubels",
-      link: "/buitenmeubels",
-    },
-    {
-      name: "Projecten",
-      link: "/projecten",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
-  ]
 
   return (
     <header>
@@ -51,7 +15,7 @@ const Header: React.FC = () => {
           <Logo link="/" />
         </div>
         <nav className="hidden md:block">
-          <NavigationItems items={navItems} />
+          <NavItems items={pageMetadata.navItems} />
         </nav>
 
         <div className="relative md:hidden mx-6 mb-3">
@@ -76,7 +40,7 @@ const Header: React.FC = () => {
           {drawerIsVisible ? (
             <div className="absolute left-0 right-0 z-50 pt-3">
               <nav className="bg-gray-100 bg-opacity-90 border-t-4 border-primary p-3 text-black">
-                <NavigationItems items={navItems} />
+                <NavItems items={pageMetadata.navItems} />
               </nav>
             </div>
           ) : null}

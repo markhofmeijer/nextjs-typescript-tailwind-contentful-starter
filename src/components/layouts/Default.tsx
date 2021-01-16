@@ -1,15 +1,12 @@
 import React from "react"
 
+import { PageMetadata } from "@/types/app"
 import { Header } from "@/components/modules/Header"
 import { Footer } from "@/components/modules/Footer"
 
-interface PropTypes {
-  children: React.ReactNode
-}
-
-const DefaultLayout: React.FC<PropTypes> = ({ children }) => (
+const DefaultLayout: React.FC<PageMetadata> = ({ pageMetadata, children }) => (
   <div className="flex flex-col min-h-screen">
-    <Header />
+    <Header pageMetadata={pageMetadata} />
     <main className="flex-grow">{children}</main>
     <Footer />
   </div>

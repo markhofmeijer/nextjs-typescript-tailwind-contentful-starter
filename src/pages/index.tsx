@@ -1,13 +1,16 @@
 import React from "react"
+import { GetStaticProps } from "next"
 import Image from "next/image"
 import Link from "next/link"
 // import Head from "next/head"
 
+import { PageMetadata } from "@/types/app"
 import { Layout } from "@/components/layouts"
+import getNavigationItems from "@/utils/contentful/siteNavigation/getNavigationItems"
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC<PageMetadata> = ({ pageMetadata }) => {
   return (
-    <Layout>
+    <Layout pageMetadata={pageMetadata}>
       <div className="relative py-8 md:py-24" style={{ height: "40vh" }}>
         <Image
           src="/visuals/carpenter-001.jpg"
@@ -61,6 +64,18 @@ const IndexPage: React.FC = () => {
       </div>
     </Layout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const navItems = await getNavigationItems()
+
+  return {
+    props: {
+      pageMetadata: {
+        navItems,
+      },
+    },
+  }
 }
 
 export default IndexPage

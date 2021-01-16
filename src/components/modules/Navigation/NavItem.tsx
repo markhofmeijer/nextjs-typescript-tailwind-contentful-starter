@@ -1,11 +1,11 @@
 import React from "react"
 import Link from "next/link"
 
-import { INavigationItem } from "@/types/navigation"
+import { NavItemProps } from "@/types/navigation"
 
-const NavigationItem: React.FC<INavigationItem> = props => {
+const NavItem: React.FC<NavItemProps> = ({ level, item }) => {
   const linkContainerClasses =
-    props.level === 1
+    level === 1
       ? [
           "group",
           "mb-3 md:mb-0",
@@ -19,17 +19,17 @@ const NavigationItem: React.FC<INavigationItem> = props => {
     "md:uppercase tracking-wide font-medium",
     "md:text-gray-700 md:hover:text-gray-900",
   ]
-  if (props.level === 1) {
+  if (level === 1) {
     linkClasses.push("px-4 md:pt-3 md:py-2")
   }
 
   return (
     <div className={linkContainerClasses.join(" ")}>
-      <Link href={props.link}>
-        <a className={linkClasses.join(" ")}>{props.name}</a>
+      <Link href={item.slug}>
+        <a className={linkClasses.join(" ")}>{item.name}</a>
       </Link>
     </div>
   )
 }
 
-export { NavigationItem }
+export { NavItem }
