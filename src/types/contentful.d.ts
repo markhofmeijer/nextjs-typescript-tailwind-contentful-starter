@@ -14,6 +14,21 @@ export interface IPageFields {
 
   /** Vrije tekst */
   description?: string | undefined
+
+  /** SEO - Titel */
+  seo_title?: string | undefined
+
+  /** SEO - Omschrijving */
+  seo_description?: string | undefined
+
+  /** SEO - URL */
+  seo_url?: string | undefined
+
+  /** SEO - Afbeelding */
+  seo_image?: Asset | undefined
+
+  /** SEO - Zoekwoorden */
+  seo_keywords?: string[] | undefined
 }
 
 export interface IPage extends Entry<IPageFields> {
@@ -120,19 +135,19 @@ export interface ISiteMetadataFields {
   client_socialMediaYouTube?: string | undefined
 
   /** SEO - Titel */
-  title: string
+  seo_title: string
 
   /** SEO - Omschrijving */
-  description: string
+  seo_description: string
 
   /** SEO - URL */
-  url: string
+  seo_url: string
 
-  /** SEO - Image */
-  image?: Asset | undefined
+  /** SEO - Afbeelding */
+  seo_image?: Asset | undefined
 
   /** SEO - Zoekwoorden */
-  keywords?: string[] | undefined
+  seo_keywords?: string[] | undefined
 }
 
 export interface ISiteMetadata extends Entry<ISiteMetadataFields> {

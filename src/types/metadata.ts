@@ -1,4 +1,4 @@
-import { IMediaImage } from "./media"
+import { ISEO } from "./seo"
 
 export interface IMetadata {
   clientName: string
@@ -15,9 +15,5 @@ export interface IMetadata {
   clientSocialMediaFacebook?: string | null
   clientSocialMediaInstagram?: string | null
   clientSocialMediaYouTube?: string | null
-  title: string
-  description: string
-  url: string
-  image?: IMediaImage | null
-  keywords: string[]
+  seo: ISEO
 }

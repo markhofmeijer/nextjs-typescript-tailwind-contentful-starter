@@ -1,9 +1,8 @@
 import { Entry } from "contentful"
 
-import mediaParser from "../media/mediaParser"
+import seoParser from "../seo/seoParser"
 import { ISiteMetadataFields } from "@/types/contentful"
 import { IMetadata } from "@/types/metadata"
-import { IMediaImage } from "@/types/media"
 
 export default function metadataParser({ fields }: Entry<ISiteMetadataFields>): IMetadata {
   return {
@@ -21,10 +20,6 @@ export default function metadataParser({ fields }: Entry<ISiteMetadataFields>): 
     clientSocialMediaFacebook: fields.client_socialMediaFacebook ?? null,
     clientSocialMediaInstagram: fields.client_socialMediaInstagram ?? null,
     clientSocialMediaYouTube: fields.client_socialMediaYouTube ?? null,
-    title: fields.title,
-    description: fields.description,
-    url: fields.url,
-    image: mediaParser(fields.image) as IMediaImage,
-    keywords: fields.keywords ?? [],
+    seo: seoParser(fields),
   }
 }
