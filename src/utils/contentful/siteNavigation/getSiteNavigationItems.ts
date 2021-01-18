@@ -5,7 +5,7 @@ import navigationItemParser from "./navigationItemParser"
 import { ISiteNavigationFields } from "@/types/contentful"
 import { INavigationItem } from "@/types/navigation"
 
-export default async function getNavigationItems(
+export default async function getSiteNavigationItems(
   levels = 2,
   code = "root"
 ): Promise<INavigationItem[]> {

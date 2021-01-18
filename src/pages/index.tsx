@@ -4,17 +4,22 @@ import Image from "next/image"
 import Link from "next/link"
 // import Head from "next/head"
 
-import { IAppData } from "@/types/app"
+import { IAppData, IAppDataProps } from "@/types/app"
 import { Layout } from "@/components/layouts"
-import getNavigationItems from "@/utils/contentful/siteNavigation/getNavigationItems"
+import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
+import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
+import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
+import Markdown from "@/utils/markdown"
 
-const IndexPage: React.FC<IAppData> = ({ data }) => {
+const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
+  const { title, description, image } = data.page
+
   return (
     <Layout data={data}>
       <div className="relative py-8 md:py-24" style={{ height: "40vh" }}>
         <Image
-          src="/visuals/carpenter-001.jpg"
-          alt="JS WoodDesign"
+          src={image.url}
+          alt={image.description}
           layout="fill"
           className="object-center object-cover pointer-events-none"
           quality={40}
@@ -41,16 +46,9 @@ const IndexPage: React.FC<IAppData> = ({ data }) => {
 
       <div className="py-8 bg-primary-lighter bg-opacity-75 text-center">
         <div className="container">
-          <h1 className="text-3xl font-bold">JS WoodDesign</h1>
+          <h1 className="text-3xl font-bold">{title}</h1>
           <div>
-            <p>Uw adres voor moderne, klassieke of industriële meubels en interieurwerken.</p>
-            <p>
-              We hebben al een breed aanbod meubilair en projecten naar tevredenheid mogen
-              opleveren.
-            </p>
-            <p>
-              <em>Wat kunnen wij voor u betekenen?</em>
-            </p>
+            <Markdown src={description} />
           </div>
         </div>
       </div>
@@ -67,15 +65,20 @@ const IndexPage: React.FC<IAppData> = ({ data }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const navItems = await getNavigationItems()
+  const page = await getPageBySlug("/")
+  //   console.log(page)
+  const navItems = await getSiteNavigationItems()
+  //   const meta = await getSiteMetadata()
+  //   console.log(meta)
+
+  const data: IAppData = {
+    page,
+    navItems,
+  }
 
   return {
     props: {
-      data: {
-        page: {
-          navItems,
-        },
-      },
+      data,
     },
   }
 }

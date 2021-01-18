@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
-import { IAppData } from "@/types/app"
+import { IAppDataProps } from "@/types/app"
 import { Logo } from "@/components/elements/Logo"
 import { NavItems } from "@/components/modules/Navigation"
 
-const Header: React.FC<IAppData> = ({ data }) => {
+const Header: React.FC<IAppDataProps> = ({ data }) => {
   const [drawerIsVisible, setDrawerIsVisible] = useState(false)
   const drawerToggleHandler = () => setDrawerIsVisible(!drawerIsVisible)
 
@@ -15,7 +15,7 @@ const Header: React.FC<IAppData> = ({ data }) => {
           <Logo link="/" />
         </div>
         <nav className="hidden md:block">
-          <NavItems items={data.page.navItems} />
+          <NavItems items={data.navItems} />
         </nav>
 
         <div className="relative md:hidden mx-6 mb-3">
@@ -40,7 +40,7 @@ const Header: React.FC<IAppData> = ({ data }) => {
           {drawerIsVisible ? (
             <div className="absolute left-0 right-0 z-50 pt-3">
               <nav className="bg-gray-100 bg-opacity-90 border-t-4 border-primary p-3 text-black">
-                <NavItems items={data.page.navItems} />
+                <NavItems items={data.navItems} />
               </nav>
             </div>
           ) : null}

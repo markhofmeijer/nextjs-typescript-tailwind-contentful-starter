@@ -102,7 +102,7 @@ export interface ISiteMetadataFields {
   client_openingHours?: string | undefined
 
   /** Webshop */
-  webshop?: string | undefined
+  client_webshop?: string | undefined
 
   /** Social media - LinkedIn */
   client_socialMediaLinkedIn?: string | undefined
@@ -129,7 +129,7 @@ export interface ISiteMetadataFields {
   url: string
 
   /** SEO - Image */
-  image: Asset
+  image?: Asset | undefined
 
   /** SEO - Zoekwoorden */
   keywords?: string[] | undefined

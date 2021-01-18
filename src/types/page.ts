@@ -1,7 +1,9 @@
-import { INavigationItem } from "@/types/navigation"
+import { IMediaImage } from "./media"
 
 export interface IPage {
-  slug?: string
-  title?: string
-  navItems?: INavigationItem[]
+  id: string
+  slug: string
+  title: string
+  image?: IMediaImage | null
+  description?: string
 }

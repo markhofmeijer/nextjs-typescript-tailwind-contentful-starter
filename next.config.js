@@ -1,10 +1,5 @@
 module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: "/rewrite",
-        destination: "/",
-      },
-    ]
+  images: {
+    domains: ["images.ctfassets.net"],
   },
 }

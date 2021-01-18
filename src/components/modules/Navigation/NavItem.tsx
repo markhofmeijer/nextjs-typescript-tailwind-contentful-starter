@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "next/link"
 
-import { NavItemProps } from "@/types/navigation"
+import { INavItemProps } from "@/types/navigation"
 
-const NavItem: React.FC<NavItemProps> = ({ level, item }) => {
+const NavItem: React.FC<INavItemProps> = ({ level, item }) => {
   const linkContainerClasses =
     level === 1
       ? [
@@ -25,7 +25,7 @@ const NavItem: React.FC<NavItemProps> = ({ level, item }) => {
 
   return (
     <div className={linkContainerClasses.join(" ")}>
-      <Link href={item.slug}>
+      <Link href={`/${item.slug}`}>
         <a className={linkClasses.join(" ")}>{item.name}</a>
       </Link>
     </div>

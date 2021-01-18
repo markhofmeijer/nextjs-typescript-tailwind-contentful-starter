@@ -1,9 +1,9 @@
 import React from "react"
 
-import { NavItemsProps } from "@/types/navigation"
+import { INavItemsProps } from "@/types/navigation"
 import { NavItem } from "./NavItem"
 
-const NavItems: React.FC<NavItemsProps> = ({ level, items }) => {
+const NavItems: React.FC<INavItemsProps> = ({ level, items }) => {
   const currentLevel = level ? level + 1 : 1
 
   return (
