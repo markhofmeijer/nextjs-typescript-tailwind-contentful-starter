@@ -7,5 +7,7 @@ export interface IPage {
   title: string
   image?: IMediaImage | null
   description?: string | null
+  language?: string | null
+  locale?: string | null
   seo: ISEO
 }
