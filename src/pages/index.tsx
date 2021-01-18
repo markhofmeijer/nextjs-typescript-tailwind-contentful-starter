@@ -66,14 +66,13 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const page = await getPageBySlug("/")
-  //   console.log(page)
   const navItems = await getSiteNavigationItems()
-  //   const meta = await getSiteMetadata()
-  //   console.log(meta)
+  const metaData = await getSiteMetadata()
 
   const data: IAppData = {
     page,
     navItems,
+    metaData,
   }
 
   return {
