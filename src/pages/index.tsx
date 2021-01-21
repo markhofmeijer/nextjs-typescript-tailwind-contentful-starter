@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const page = await getPageBySlug("/")
   const navItems = await getSiteNavigationItems()
   const metaData = await getSiteMetadata()
-  const products = await getHomepageProducts()
+  const products = await getHomepageProducts(true)
 
   const data: IAppData = {
     page,
