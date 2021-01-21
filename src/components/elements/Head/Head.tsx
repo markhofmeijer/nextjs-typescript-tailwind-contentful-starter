@@ -21,6 +21,10 @@ const Head: React.FC<IAppDataProps> = ({ data }) => {
   if (pageImage) image = pageImage
   if (pageKeywords && pageKeywords.length > 0) keywords = [...keywords, ...pageKeywords]
 
+  // temp
+  url = "https://jswooddesign.vercel.app/"
+  // /temp
+
   return (
     <NextHead>
       <title>{title}</title>
