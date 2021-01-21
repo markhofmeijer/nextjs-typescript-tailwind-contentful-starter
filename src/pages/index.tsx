@@ -2,18 +2,20 @@ import React from "react"
 import { GetStaticProps } from "next"
 import Image from "next/image"
 import Link from "next/link"
-// import Head from "next/head"
 
 import { Head } from "@/components/elements/Head"
-import { IAppData, IAppDataProps } from "@/types/app"
+import { Product } from "@/components/elements/Product"
 import { Layout } from "@/components/layouts"
+import { IAppData, IAppDataProps } from "@/types/app"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
+import getHomepageProducts from "@/utils/contentful/product/getHomepageProducts"
 import Markdown from "@/utils/markdown"
 
 const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
   const { title, description, image } = data.page
+  const { products } = data
 
   return (
     <Layout data={data}>
@@ -21,7 +23,7 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
       <div className="relative py-8 md:py-24" style={{ height: "40vh" }}>
         <Image
           src={image.url}
-          alt={image.description}
+          alt={image.description ?? image.title}
           layout="fill"
           className="object-center object-cover pointer-events-none"
           quality={40}
@@ -45,7 +47,6 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
           </div>
         </div>
       </div>
-
       <div className="py-8 bg-primary-lighter bg-opacity-75 text-center">
         <div className="container">
           <h1 className="text-3xl font-bold">{title}</h1>
@@ -54,12 +55,22 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
           </div>
         </div>
       </div>
-
       <div className="py-8">
         <div className="container">
           <div className="pb-8 text-center">
             <h2 className="text-2xl font-bold">Recent opgeleverd</h2>
           </div>
+          {products && products.length > 0 ? (
+            <div className="pt-8 pb-8 grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
+              {products.map(product => (
+                <Product key={product.id} {...product} />
+              ))}
+            </div>
+          ) : (
+            <div className="italic text-center">
+              Er zijn momenteel geen opleveringen beschikbaar. Kom later nog eens terug!
+            </div>
+          )}
         </div>
       </div>
     </Layout>
@@ -70,11 +81,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const page = await getPageBySlug("/")
   const navItems = await getSiteNavigationItems()
   const metaData = await getSiteMetadata()
+  const products = await getHomepageProducts()
 
   const data: IAppData = {
     page,
     navItems,
     metaData,
+    products,
   }
 
   return {
