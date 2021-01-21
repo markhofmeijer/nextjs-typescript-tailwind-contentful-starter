@@ -1,0 +1,14 @@
+import { EntryCollection } from "contentful"
+
+import getClient from "../contentful"
+import productParser from "./productParser"
+import { IProductFields } from "@/types/contentful"
+import { IProduct } from "@/types/product"
+
+export default async function getProducts(): Promise<IProduct[]> {
+  const entries: EntryCollection<IProductFields> = await getClient().getEntries({
+    content_type: "product",
+  })
+
+  return entries.items.map(productParser)
+}
