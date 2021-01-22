@@ -1,48 +1,35 @@
 import React from "react"
 
-const Footer: React.FC = () => {
-  // const data = useStaticQuery(graphql`
-  // 	query {
-  // 		site {
-  // 			siteMetadata {
-  // 				author {
-  // 					name
-  // 					website
-  // 				}
-  // 				client {
-  // 					name
-  // 					address
-  // 					zipCode
-  // 					city
-  // 					phone
-  // 					email
-  // 				}
-  // 			}
-  // 		}
-  // 	}
-  // `)
+import { SocialMediaRibbon } from "@/components/modules/SocialMedia"
+import { IAppDataProps } from "@/types/app"
 
-  // const { siteMetadata } = data.site
-  // const { author, client } = siteMetadata
+const Footer: React.FC<IAppDataProps> = ({ data }) => {
+  const { metaData } = data
+
+  const authorName = "Click-Designs"
+  const authorWebsite = "https://www.click-designs.nl"
 
   return (
     <footer className="py-2 bg-primary-lighter bg-opacity-50 text-xs">
       <div className="container md:flex justify-between">
-        FOOTER
-        {/* <div>
-					{client.name} - <span className="whitespace-no-wrap">{client.address}</span>
-					{" - "}
-					<span className="whitespace-no-wrap">
-						{client.zipCode} {client.city}
-					</span>
-					{" - "}
-					<span className="whitespace-no-wrap">{client.phone}</span>
-				</div>
-				<div className="pt-4 md:pt-0">
-					<a href={author.website} target="blank" className="hover:underline">
-						{`©${new Date().getFullYear()} - ${author.name}`}
-					</a>
-				</div> */}
+        <div>
+          {metaData.clientName} -{" "}
+          <span className="whitespace-no-wrap">{metaData.clientAddress}</span>
+          {" - "}
+          <span className="whitespace-no-wrap">
+            {metaData.clientZipCode} {metaData.clientCity}
+          </span>
+          {" - "}
+          <span className="whitespace-no-wrap">{metaData.clientPhone}</span>
+        </div>
+        <div className="mt-4 md:mt-0">
+          <SocialMediaRibbon data={data} />
+        </div>
+        <div className="mt-4 md:mt-0">
+          <a href={authorWebsite} target="blank" className="hover:underline">
+            {`©${new Date().getFullYear()} - ${authorName}`}
+          </a>
+        </div>
       </div>
     </footer>
   )

@@ -1,0 +1,1 @@
+export { SocialMediaRibbon } from "./SocialMediaRibbon"

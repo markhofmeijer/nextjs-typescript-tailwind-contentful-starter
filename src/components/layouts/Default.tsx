@@ -8,7 +8,7 @@ const DefaultLayout: React.FC<IAppDataProps> = ({ data, children }) => (
   <div className="flex flex-col min-h-screen">
     <Header data={data} />
     <main className="flex-grow">{children}</main>
-    <Footer />
+    <Footer data={data} />
   </div>
 )
 
