@@ -24,7 +24,7 @@ const Footer: React.FC<IAppDataProps> = ({ data }) => {
           <span className="inline-block mx-1">-</span>
           <span className="whitespace-no-wrap">{metaData.clientPhone}</span>
         </div>
-        <div className="mt-2 md:mt-0 md:flex md:items-center opacity-70">
+        <div className="mt-3 md:mt-0 md:flex md:items-center opacity-70">
           <SocialMediaRibbon data={data} />
         </div>
         <div className="mt-8 md:mt-0 flex items-center justify-center">
