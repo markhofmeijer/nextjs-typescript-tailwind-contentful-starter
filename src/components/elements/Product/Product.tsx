@@ -51,7 +51,7 @@ const Product: React.FC<IProduct> = props => {
       <div className="text-sm md:text-xs lg:text-sm font-semibold text-center truncate">{name}</div>
       {slug ? (
         <div className="text-center">
-          <button className="inline-block px-2 py-1 rounded-md bg-primary-lighter hover:bg-primary tracking-wide text-sm text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          <button className="inline-block px-2 py-1 rounded-md bg-primary hover:bg-primary-dark tracking-wide text-sm text-white font-semibold transition duration-400 ease-in-out transform hover:-translate-y-1 hover:scale-105">
             Meer informatie
           </button>
         </div>

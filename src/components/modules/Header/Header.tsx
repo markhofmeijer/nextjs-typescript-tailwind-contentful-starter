@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 
-import { IAppDataProps } from "@/types/app"
 import { Logo } from "@/components/elements/Logo"
 import { NavItems } from "@/components/modules/Navigation"
+import { SocialMediaRibbon } from "@/components/modules/SocialMedia"
+
+import { IAppDataProps } from "@/types/app"
 
 const Header: React.FC<IAppDataProps> = ({ data }) => {
   const [drawerIsVisible, setDrawerIsVisible] = useState(false)
@@ -11,8 +13,13 @@ const Header: React.FC<IAppDataProps> = ({ data }) => {
   return (
     <header>
       <div className="container">
-        <div className="py-4 md:pt-6 md:pb-0">
-          <Logo link="/" />
+        <div className="relative py-4 md:pt-6 md:pb-0">
+          <div className="flex justify-center">
+            <Logo link="/" />
+          </div>
+          <div className="hidden md:block absolute top-4 md:top-6 right-0 opacity-70">
+            <SocialMediaRibbon data={data} />
+          </div>
         </div>
         <nav className="hidden md:block">
           <NavItems items={data.navItems} />

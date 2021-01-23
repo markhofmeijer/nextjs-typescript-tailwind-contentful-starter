@@ -9,16 +9,7 @@ interface PropTypes {
 
 const Logo: React.FC<PropTypes> = props => {
   const alt = props.alt ? props.alt : "logo"
-  const logo = (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Image src="/logo.png" alt={alt} width={280} height={122} />
-    </div>
-  )
+  const logo = <Image src="/logo.png" alt={alt} width={280} height={122} />
 
   return props.link ? (
     <Link href={props.link}>

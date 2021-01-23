@@ -6,12 +6,13 @@ import Link from "next/link"
 import { Head } from "@/components/elements/Head"
 import { Product } from "@/components/elements/Product"
 import { Layout } from "@/components/layouts"
-import { IAppData, IAppDataProps } from "@/types/app"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
 import getHomepageProducts from "@/utils/contentful/product/getHomepageProducts"
 import Markdown from "@/utils/markdown"
+
+import { IAppData, IAppDataProps } from "@/types/app"
 
 const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
   const { title, description, image } = data.page
@@ -40,7 +41,7 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
           </div>
           <div className="text-center">
             <Link href="/tafels">
-              <a className="inline-block mt-8 px-4 py-2 border-2 border-white rounded-md bg-primary hover:bg-primary-dark tracking-wide text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+              <a className="inline-block mt-8 px-4 py-2 border-2 border-white rounded-md bg-primary-dark hover:bg-primary-dark tracking-wide text-white font-semibold transition duration-400 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                 Bekijk onze tafels
               </a>
             </Link>
