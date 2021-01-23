@@ -41,7 +41,6 @@ const ContentPage: React.FC<IAppDataProps> = ({ data }) => {
               className="object-center object-cover pointer-events-none rounded"
               quality={40}
             />
-            x
             <div className="absolute inset-0 bg-white opacity-10" />
           </div>
         ) : null}
