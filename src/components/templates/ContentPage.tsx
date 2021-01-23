@@ -15,6 +15,7 @@ const ContentPage: React.FC<IAppDataProps> = ({ data }) => {
           <h1 className="text-3xl font-bold">{title}</h1>
         </div>
       </div>
+
       {image ? (
         <div className="relative md:hidden" style={{ height: "30vh" }}>
           <Image
@@ -44,17 +45,11 @@ const ContentPage: React.FC<IAppDataProps> = ({ data }) => {
             <div className="absolute inset-0 bg-white opacity-10" />
           </div>
         ) : null}
+
         <Markdown src={description} />
       </div>
     </>
   )
 }
-//{ title, image, content }
-
-/* 
-
-		
-
-		*/
 
 export { ContentPage }
