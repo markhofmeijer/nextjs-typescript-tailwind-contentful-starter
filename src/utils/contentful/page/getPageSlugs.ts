@@ -2,6 +2,7 @@ import { EntryCollection } from "contentful"
 
 import getClient from "../contentful"
 import pageParser from "./pageParser"
+
 import { IPageFields } from "@/types/contentful"
 import { IPage } from "@/types/page"
 

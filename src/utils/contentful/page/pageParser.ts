@@ -2,6 +2,7 @@ import { Entry } from "contentful"
 
 import mediaParser from "../media/mediaParser"
 import seoParser from "../seo/seoParser"
+
 import { IPageFields } from "@/types/contentful"
 import { IPage } from "@/types/page"
 import { IMediaImage } from "@/types/media"

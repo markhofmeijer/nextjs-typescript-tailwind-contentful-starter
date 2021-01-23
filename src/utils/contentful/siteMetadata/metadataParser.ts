@@ -1,6 +1,7 @@
 import { Entry } from "contentful"
 
 import seoParser from "../seo/seoParser"
+
 import { ISiteMetadataFields } from "@/types/contentful"
 import { IMetadata } from "@/types/metadata"
 

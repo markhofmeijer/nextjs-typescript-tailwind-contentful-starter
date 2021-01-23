@@ -2,6 +2,7 @@ import { EntryCollection } from "contentful"
 
 import getClient from "../contentful"
 import metadataParser from "./metadataParser"
+
 import { ISiteMetadataFields } from "@/types/contentful"
 import { IMetadata } from "@/types/metadata"
 

@@ -1,6 +1,8 @@
 import { Entry } from "contentful"
 
 import mediaParser from "../media/mediaParser"
+// import seoParser from "../seo/seoParser"
+
 import { IProductFields } from "@/types/contentful"
 import { IProduct } from "@/types/product"
 import { IMediaImage } from "@/types/media"

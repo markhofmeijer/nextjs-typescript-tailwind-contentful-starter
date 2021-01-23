@@ -1,4 +1,5 @@
 import mediaParser from "../media/mediaParser"
+
 import { ISiteMetadataFields, IPageFields } from "@/types/contentful"
 import { IMediaImage } from "@/types/media"
 import { ISEO } from "@/types/seo"

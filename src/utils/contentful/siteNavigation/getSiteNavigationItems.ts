@@ -2,6 +2,7 @@ import { EntryCollection } from "contentful"
 
 import getClient from "../contentful"
 import navigationItemParser from "./navigationItemParser"
+
 import { ISiteNavigationFields } from "@/types/contentful"
 import { INavigationItem } from "@/types/navigation"
 
