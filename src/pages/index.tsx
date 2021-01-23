@@ -3,7 +3,6 @@ import { GetStaticProps } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Head } from "@/components/elements/Head"
 import { Product } from "@/components/elements/Product"
 import { Layout } from "@/components/layouts"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
@@ -20,7 +19,6 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
 
   return (
     <Layout data={data}>
-      <Head data={data} />
       <div className="relative py-8 md:py-24" style={{ height: "40vh" }}>
         <Image
           src={image.url}
