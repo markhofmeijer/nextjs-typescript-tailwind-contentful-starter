@@ -15,23 +15,9 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/fonts/open-sans-latin-regular.woff"
-            as="font"
-            type="font/woff"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
             href="/fonts/open-sans-latin-italic.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/open-sans-latin-italic.woff"
-            as="font"
-            type="font/woff"
             crossOrigin="anonymous"
           />
           <link
@@ -43,23 +29,9 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/fonts/open-sans-latin-600.woff"
-            as="font"
-            type="font/woff"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
             href="/fonts/open-sans-latin-600italic.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/open-sans-latin-600italic.woff"
-            as="font"
-            type="font/woff"
             crossOrigin="anonymous"
           />
           <link
@@ -71,23 +43,9 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/fonts/open-sans-latin-700.woff"
-            as="font"
-            type="font/woff"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
             href="/fonts/open-sans-latin-700italic.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/open-sans-latin-700italic.woff"
-            as="font"
-            type="font/woff"
             crossOrigin="anonymous"
           />
         </Head>
