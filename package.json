@@ -1,7 +1,12 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "jswooddesign.nl",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Click-Designs",
+    "email": "sales@click-designs.nl",
+    "url": "https://www.click-designs.nl"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
