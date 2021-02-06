@@ -25,7 +25,7 @@ const Header: React.FC<IAppDataProps> = ({ data }) => {
           <NavItems items={data.navItems} />
         </nav>
 
-        <div className="relative md:hidden mx-6 mb-3">
+        <div className="relative md:hidden mx-6 mb-6">
           <button
             type="button"
             className="group w-full inline-flex justify-between py-1 px-2 bg-gray-100 hover:bg-gray-300 border border-gray-300 rounded text-sm tracking-wide"
