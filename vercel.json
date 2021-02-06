@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "^/fonts/open-sans-([w]+?.(woff2|woff))$",
+      "source": "/fonts/open-sans-(\\w+).(woff2|woff)",
       "headers": [
         {
           "key": "Cache-Control",
