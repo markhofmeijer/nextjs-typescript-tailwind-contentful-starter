@@ -3,8 +3,8 @@ import { GetStaticProps } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Product } from "@/components/elements/Product"
 import { Layout } from "@/components/layouts"
+import { Product } from "@/components/elements/Product"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
@@ -19,7 +19,10 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
 
   return (
     <Layout data={data}>
-      <div className="relative py-8 md:py-24" style={{ height: "40vh" }}>
+      <div
+        className="relative flex flex-col items-center justify-center"
+        style={{ height: "35vh", minHeight: 300 }}
+      >
         <Image
           src={image.url}
           alt={image.description ?? image.title}
