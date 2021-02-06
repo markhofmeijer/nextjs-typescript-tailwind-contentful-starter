@@ -16,7 +16,5 @@ export default async function getPageBySlug(slug: string | string[]): Promise<IP
 
   if (entries.items.length === 0) return null
 
-  const pages: IPage[] = entries.items.map(pageParser)
-
-  return pages[0]
+  return pageParser(entries.items[0])
 }

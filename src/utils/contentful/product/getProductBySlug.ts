@@ -1,0 +1,20 @@
+import { EntryCollection } from "contentful"
+
+import getClient from "../contentful"
+import productParser from "./productParser"
+
+import { IProductFields } from "@/types/contentful"
+import { IProduct } from "@/types/product"
+
+export default async function getProductBySlug(slug: string | string[]): Promise<IProduct> {
+  if (Array.isArray(slug)) slug = slug[0]
+
+  const entries: EntryCollection<IProductFields> = await getClient().getEntries({
+    content_type: "product",
+    "fields.url": slug === "/" ? "home" : slug,
+  })
+
+  if (entries.items.length === 0) return null
+
+  return productParser(entries.items[0])
+}

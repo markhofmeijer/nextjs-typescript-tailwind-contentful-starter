@@ -21,7 +21,7 @@ export interface IPageFields {
   /** SEO - Omschrijving */
   seo_description?: string | undefined
 
-  /** SEO - URL */
+  /** SEO - URL (canonical) */
   seo_url?: string | undefined
 
   /** SEO - Afbeelding */
@@ -56,7 +56,7 @@ export interface IProductFields {
   url: string
 
   /** Categorie */
-  category: "Tafels" | "Buitenmeubels" | "Projecten"
+  category: "tafels" | "buitenmeubels" | "projecten"
 
   /** Tonen op homepage */
   homepage: boolean
@@ -72,6 +72,21 @@ export interface IProductFields {
 
   /** Sfeerbeelden */
   atmosphericImages?: Asset[] | undefined
+
+  /** SEO - Titel */
+  seo_title?: string | undefined
+
+  /** SEO - Omschrijving */
+  seo_description?: string | undefined
+
+  /** SEO - URL (canonical) */
+  seo_url?: string | undefined
+
+  /** SEO - Afbeelding */
+  seo_image?: Asset | undefined
+
+  /** SEO - Zoekwoorden */
+  seo_keywords?: string[] | undefined
 }
 
 export interface IProduct extends Entry<IProductFields> {

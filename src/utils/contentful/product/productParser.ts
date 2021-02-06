@@ -1,7 +1,7 @@
 import { Entry } from "contentful"
 
 import mediaParser from "../media/mediaParser"
-// import seoParser from "../seo/seoParser"
+import seoParser from "../seo/seoParser"
 
 import { IProductFields } from "@/types/contentful"
 import { IProduct } from "@/types/product"
@@ -20,7 +20,8 @@ export default function productParser({ sys, fields }: Entry<IProductFields>): I
     homepage: fields.homepage,
     deliveryDate: fields.deliveryDate,
     description: fields.description ?? null,
-    mainImage: mediaParser(fields.mainImage) as IMediaImage,
+    mainImage: fields.mainImage ? (mediaParser(fields.mainImage) as IMediaImage) : null,
     atmosphericImages: atmosphericImages ?? null,
+    seo: seoParser(fields),
   }
 }
