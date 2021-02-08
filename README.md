@@ -1,7 +1,7 @@
 ## jswooddesign.nl
 
-**Click-Designs**
-Release Date: 10/02/2021
+**Click-Designs**  
+Release Date: 10/02/2021  
 Author: Mark Hofmeijer (m.hofmeijer@click-designs.nl)
 
 ## Tech Stack
