@@ -46,7 +46,10 @@ const Header: React.FC<IAppDataProps> = ({ data }) => {
           </button>
           {drawerIsVisible ? (
             <div className="absolute left-0 right-0 z-50 pt-3">
-              <nav className="bg-gray-100 bg-opacity-90 border-t-4 border-primary p-3 text-black">
+              <nav
+                className="bg-gray-100 bg-opacity-90 border-t-4 border-primary p-3 text-black"
+                onClick={drawerToggleHandler}
+              >
                 <NavItems items={data.navItems} />
               </nav>
             </div>
