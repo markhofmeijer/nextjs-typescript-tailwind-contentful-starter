@@ -59,7 +59,7 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
       </div>
       <div className="py-8">
         <div className="container">
-          <div className="pb-8 text-center">
+          <div className="pb-4 text-center">
             <h2 className="text-2xl font-bold">Recent opgeleverd</h2>
           </div>
           {products && products.length > 0 ? (
