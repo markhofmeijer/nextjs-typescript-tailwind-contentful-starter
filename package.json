@@ -8,8 +8,9 @@
     "url": "https://www.click-designs.nl"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
+    "postbuild": "next-on-netlify",
     "start": "next start",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
@@ -25,6 +26,7 @@
   "dependencies": {
     "contentful": "^8.1.7",
     "next": "^10.0.5",
+    "next-on-netlify": "^2.8.7",
     "next-pwa": "^5.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
