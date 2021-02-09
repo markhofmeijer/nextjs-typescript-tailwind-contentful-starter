@@ -6,20 +6,25 @@ import { IAppDataProps } from "@/types/app"
 const Head: React.FC<IAppDataProps> = ({ data }) => {
   const { clientName } = data.metaData
   let { title, description, url, image, keywords } = data.metaData.seo
-  const {
-    title: pageTitle,
-    description: pageDescription,
-    url: pageUrl,
-    image: pageImage,
-    keywords: pageKeywords,
-  } = data.page.seo
-  const { locale } = data.page
+  let locale = null
 
-  if (pageTitle) title = pageTitle
-  if (pageDescription) description = pageDescription
-  if (pageUrl) url = pageUrl
-  if (pageImage) image = pageImage
-  if (pageKeywords && pageKeywords.length > 0) keywords = [...keywords, ...pageKeywords]
+  if (data.page) {
+    const {
+      title: pageTitle,
+      description: pageDescription,
+      url: pageUrl,
+      image: pageImage,
+      keywords: pageKeywords,
+    } = data.page.seo
+
+    locale = data.page.locale
+
+    if (pageTitle) title = pageTitle
+    if (pageDescription) description = pageDescription
+    if (pageUrl) url = pageUrl
+    if (pageImage) image = pageImage
+    if (pageKeywords && pageKeywords.length > 0) keywords = [...keywords, ...pageKeywords]
+  }
 
   return (
     <NextHead>

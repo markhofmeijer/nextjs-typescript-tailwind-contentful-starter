@@ -49,7 +49,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pageSlugs = await getPageSlugs()
   const paths =
     pageSlugs
-      .filter(({ slug }) => !["/", "contact"].includes(slug))
+      .filter(({ slug }) => !["/", "404", "contact"].includes(slug))
       .map(({ slug }) => `/${slug}`) ?? []
 
   return {
