@@ -27,9 +27,10 @@ const ApiHandler: NextApiHandler<IData> = async (
   res.setPreviewData({}, { maxAge: 60 * 30 })
 
   // Redirect to request page
+  const url = slug === "home" ? "/" : slug
   res.write(
-    `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${slug}" />
-    <script>window.location.href = '${slug}'</script>
+    `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
+    <script>window.location.href = '${url}'</script>
     </head>`
   )
   res.end()
