@@ -6,8 +6,8 @@ import metadataParser from "./metadataParser"
 import { ISiteMetadataFields } from "@/types/contentful"
 import { IMetadata } from "@/types/metadata"
 
-export default async function getSiteMetadata(): Promise<IMetadata> {
-  const entries: EntryCollection<ISiteMetadataFields> = await getClient().getEntries({
+export default async function getSiteMetadata(preview = false): Promise<IMetadata> {
+  const entries: EntryCollection<ISiteMetadataFields> = await getClient(preview).getEntries({
     content_type: "siteMetadata",
   })
 

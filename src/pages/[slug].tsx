@@ -25,13 +25,14 @@ const DynamicPage: React.FC<IAppDataProps> = ({ data }) => (
   </Layout>
 )
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const page = await getPageBySlug(params.slug)
-  const navItems = await getSiteNavigationItems()
-  const metaData = await getSiteMetadata()
-  const products = await getProductsByCategory(params.slug, true)
+export const getStaticProps: GetStaticProps = async ({ preview = false, params }) => {
+  const page = await getPageBySlug(params.slug, preview)
+  const navItems = await getSiteNavigationItems(preview)
+  const metaData = await getSiteMetadata(preview)
+  const products = await getProductsByCategory(params.slug, preview, true)
 
   const data: IAppData = {
+    preview,
     page,
     navItems,
     metaData,

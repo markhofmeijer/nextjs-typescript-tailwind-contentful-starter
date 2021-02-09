@@ -8,11 +8,12 @@ import { IProduct } from "@/types/product"
 
 export default async function getProductsByCategory(
   category: string | string[],
+  preview = false,
   reverse = false
 ): Promise<IProduct[]> {
   if (Array.isArray(category)) category = category[0]
 
-  const entries: EntryCollection<IProductFields> = await getClient().getEntries({
+  const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
     "fields.category": category,
     order: reverse ? "-fields.deliveryDate" : "fields.deliveryDate",

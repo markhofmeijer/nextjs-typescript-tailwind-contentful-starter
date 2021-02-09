@@ -18,13 +18,13 @@ const DynamicProductPage: React.FC<IAppDataProps> = ({ data }) => (
   </Layout>
 )
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ preview = false, params }) => {
   const category = "projecten"
 
-  const page = await getPageBySlug(category)
-  const navItems = await getSiteNavigationItems()
-  const metaData = await getSiteMetadata()
-  const product = await getProductBySlug(params.slug)
+  const page = await getPageBySlug(category, preview)
+  const navItems = await getSiteNavigationItems(preview)
+  const metaData = await getSiteMetadata(preview)
+  const product = await getProductBySlug(params.slug, preview)
 
   const seo: ISEO = {
     title: product.seo.title ?? page.seo.title,
@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const data: IAppData = {
+    preview,
     page: {
       ...page,
       seo,

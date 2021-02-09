@@ -79,13 +79,14 @@ const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const page = await getPageBySlug("/")
-  const navItems = await getSiteNavigationItems()
-  const metaData = await getSiteMetadata()
-  const products = await getHomepageProducts(true)
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const page = await getPageBySlug("/", preview)
+  const navItems = await getSiteNavigationItems(preview)
+  const metaData = await getSiteMetadata(preview)
+  const products = await getHomepageProducts(preview, true)
 
   const data: IAppData = {
+    preview,
     page,
     navItems,
     metaData,

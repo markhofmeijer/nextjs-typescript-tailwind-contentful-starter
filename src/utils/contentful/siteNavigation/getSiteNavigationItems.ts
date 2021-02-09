@@ -7,6 +7,7 @@ import { ISiteNavigationFields } from "@/types/contentful"
 import { INavigationItem } from "@/types/navigation"
 
 export default async function getSiteNavigationItems(
+  preview = false,
   levels = 2,
   code = "root"
 ): Promise<INavigationItem[]> {
@@ -15,7 +16,7 @@ export default async function getSiteNavigationItems(
       "NavigationItems - Specified level cannot be less than 2 due to required linked page objects"
     )
 
-  const entries: EntryCollection<ISiteNavigationFields> = await getClient().getEntries({
+  const entries: EntryCollection<ISiteNavigationFields> = await getClient(preview).getEntries({
     content_type: "siteNavigation",
     include: levels,
     "fields.code": code,

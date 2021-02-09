@@ -6,10 +6,13 @@ import productParser from "./productParser"
 import { IProductFields } from "@/types/contentful"
 import { IProduct } from "@/types/product"
 
-export default async function getProductBySlug(slug: string | string[]): Promise<IProduct> {
+export default async function getProductBySlug(
+  slug: string | string[],
+  preview = false
+): Promise<IProduct> {
   if (Array.isArray(slug)) slug = slug[0]
 
-  const entries: EntryCollection<IProductFields> = await getClient().getEntries({
+  const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
     "fields.url": slug === "/" ? "home" : slug,
   })

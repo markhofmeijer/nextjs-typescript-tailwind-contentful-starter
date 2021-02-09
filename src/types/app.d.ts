@@ -4,6 +4,7 @@ import { IMetadata } from "@/types/metadata"
 import { IProduct } from "@/types/product"
 
 export interface IAppData {
+  preview: boolean
   navItems?: INavigationItem[]
   page?: IPage
   metaData?: IMetadata

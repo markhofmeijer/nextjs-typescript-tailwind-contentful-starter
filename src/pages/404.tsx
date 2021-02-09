@@ -30,11 +30,13 @@ const NotFoundPage: React.FC<IAppDataProps> = ({ data }) => (
   </Layout>
 )
 
-export const getStaticProps: GetStaticProps = async () => {
-  const navItems = await getSiteNavigationItems()
-  const metaData = await getSiteMetadata()
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const navItems = await getSiteNavigationItems(preview)
+  const metaData = await getSiteMetadata(preview)
+  metaData.seo.title = "Pagina niet gevonden"
 
   const data: IAppData = {
+    preview,
     navItems,
     metaData,
   }

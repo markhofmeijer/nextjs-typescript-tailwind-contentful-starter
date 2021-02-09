@@ -6,8 +6,11 @@ import productParser from "./productParser"
 import { IProductFields } from "@/types/contentful"
 import { IProduct } from "@/types/product"
 
-export default async function getHomepageProducts(reverse = false): Promise<IProduct[]> {
-  const entries: EntryCollection<IProductFields> = await getClient().getEntries({
+export default async function getHomepageProducts(
+  preview = false,
+  reverse = false
+): Promise<IProduct[]> {
+  const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
     "fields.homepage": true,
     order: reverse ? "-fields.deliveryDate" : "fields.deliveryDate",
