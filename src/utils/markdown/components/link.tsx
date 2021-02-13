@@ -8,8 +8,6 @@ export default function CustomLink({
   children?: React.ReactNode
   href: string
 }): React.ReactElement {
-  console.log(href)
-
   return href.startsWith("/") || href === "" ? (
     <Link href={href}>
       <a>{children}</a>

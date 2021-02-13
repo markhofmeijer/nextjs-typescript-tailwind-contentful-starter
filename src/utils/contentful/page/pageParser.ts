@@ -21,7 +21,7 @@ export default function pageParser({ sys, fields }: Entry<IPageFields>): IPage {
 
   return {
     id: sys.id,
-    slug: fields.url === "home" ? "/" : fields.url,
+    slug: fields.slug === "home" ? "/" : fields.slug,
     title: fields.title,
     image: fields.image ? (mediaParser(fields.image) as IMediaImage) : null,
     description: fields.description ?? null,

@@ -1,10 +1,9 @@
 import React from "react"
 import { GetStaticProps } from "next"
-import Image from "next/image"
+import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 
-import { Layout } from "@/components/layouts"
-import { Product } from "@/components/elements/Product"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
@@ -13,69 +12,80 @@ import Markdown from "@/utils/markdown"
 
 import { IAppData, IAppDataProps } from "@/types/app"
 
-const IndexPage: React.FC<IAppDataProps> = ({ data }) => {
-  const { title, description, image } = data.page
-  const { products } = data
+const Home: React.FC<IAppDataProps> = ({ data }) => {
+  const { title, description } = data.page
 
   return (
-    <Layout data={data}>
-      <div
-        className="relative flex flex-col items-center justify-center"
-        style={{ height: "35vh", minHeight: 300 }}
-      >
-        <Image
-          src={image.url}
-          alt={image.description ?? image.title}
-          layout="fill"
-          className="object-center object-cover pointer-events-none"
-          quality={40}
-        />
-        <div className="relative z-1 flex flex-col">
-          <div className="text-center tracking-wide text-2xl leading-normal md:text-4xl md:leading-normal text-white font-semibold">
-            deskundig,
-          </div>
-          <div className="text-center tracking-wide text-2xl leading-normal md:text-4xl md:leading-normal text-white font-semibold">
-            stijlvol,
-          </div>
-          <div className="text-center tracking-wide text-3xl leading-normal md:text-5xl md:leading-normal text-white font-bold italic">
-            Twents vakmanschap
-          </div>
-          <div className="text-center">
-            <Link href="/tafels">
-              <a className="inline-block mt-8 px-4 py-2 border-2 border-white rounded-md bg-primary-dark hover:bg-primary-dark tracking-wide text-white font-semibold transition duration-400 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                Bekijk onze tafels
+    <div>
+      <Head>
+        <title>{data.metaData.seo.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="my-12 mx-auto w-1/2">
+        <h1 className="text-3xl font-bold uppercase mb-4">Next.js Starter</h1>
+        <h2 className="text-2xl font-bold">Features</h2>
+        <ul className="mb-4">
+          <li>* Next.js</li>
+          <li>* TypeScript</li>
+          <li>* Tailwinds CSS (incl. PostCSS)</li>
+          <li>* Contentful (incl. SDK integration, Preview mode)</li>
+          <li>* ESLint</li>
+          <li>* Prettier</li>
+        </ul>
+        <h2 className="text-2xl font-bold mb-2">Contentful</h2>
+        <h3 className="text-xl font-bold mb-1">Page</h3>
+        <pre>{JSON.stringify(data.page, null, 2)}</pre>
+        <h4 className="mt-2 font-bold">{title}</h4>
+        <Markdown src={description} />
+        <h3 className="text-xl font-bold mt-4 mb-1">Menu items</h3>
+        <pre>{JSON.stringify(data.navItems, null, 2)}</pre>
+        <ul className="mt-2">
+          {data.navItems.map(item => (
+            <li key={item.id}>
+              -{" "}
+              <Link href={`/${item.slug}`}>
+                <a className="text-blue-500 underline">{item.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <h3 className="text-xl font-bold mt-4 mb-1">Metadata</h3>
+        <pre>{JSON.stringify(data.metaData, null, 2)}</pre>
+        <h3 className="text-xl font-bold mt-4 mb-1">Products (homepage)</h3>
+        <pre>{JSON.stringify(data.products, null, 2)}</pre>
+        <div className="mt-2 flex">
+          {data.products.map(product => (
+            <Link key={product.id} href={`/product/${product.slug}`}>
+              <a className="text-blue-500 underline">
+                <div className="mr-4 p-8 border border-gray-700 rounded-lg">
+                  <div className="relative h-64 w-64">
+                    <Image
+                      src={product.mainImage.url}
+                      alt={product.mainImage.description ?? product.mainImage.title}
+                      layout="fill"
+                      objectFit="contain"
+                      quality="80"
+                    />
+                  </div>
+                  <div className="mt-2 text-center">{product.name}</div>
+                </div>
               </a>
             </Link>
-          </div>
+          ))}
         </div>
-      </div>
-      <div className="py-8 bg-primary-lighter bg-opacity-75 text-center">
-        <div className="container">
-          <h1 className="text-3xl font-bold">{title}</h1>
-          <div>
-            <Markdown src={description} />
-          </div>
-        </div>
-      </div>
-      <div className="py-8">
-        <div className="container">
-          <div className="pb-4 text-center">
-            <h2 className="text-2xl font-bold">Recent opgeleverd</h2>
-          </div>
-          {products && products.length > 0 ? (
-            <div className="pt-8 pb-8 grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
-              {products.map(product => (
-                <Product key={product.id} {...product} />
-              ))}
-            </div>
-          ) : (
-            <div className="italic text-center">
-              Er zijn momenteel geen opleveringen beschikbaar. Kom later nog eens terug!
-            </div>
-          )}
-        </div>
-      </div>
-    </Layout>
+      </main>
+
+      <footer className="my-4 mx-auto w-1/2">
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by <img src="/vercel.svg" alt="Vercel Logo" className="w-24" />
+        </a>
+      </footer>
+    </div>
   )
 }
 
@@ -100,4 +110,4 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   }
 }
 
-export default IndexPage
+export default Home

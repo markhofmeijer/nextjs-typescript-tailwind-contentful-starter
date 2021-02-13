@@ -14,7 +14,7 @@ export default async function getProductBySlug(
 
   const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
-    "fields.url": slug === "/" ? "home" : slug,
+    "fields.slug": slug,
   })
 
   if (entries.items.length === 0) return null

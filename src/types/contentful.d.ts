@@ -3,31 +3,31 @@
 import { Asset, Entry } from "contentful"
 
 export interface IPageFields {
-  /** Paginatitel */
+  /** Title */
   title: string
 
-  /** URL */
-  url: string
+  /** Slug */
+  slug: string
 
-  /** Afbeelding */
+  /** Image */
   image?: Asset | undefined
 
-  /** Vrije tekst */
+  /** Description */
   description?: string | undefined
 
-  /** SEO - Titel */
+  /** SEO - Title */
   seo_title?: string | undefined
 
-  /** SEO - Omschrijving */
+  /** SEO - Description */
   seo_description?: string | undefined
 
   /** SEO - URL (canonical) */
   seo_url?: string | undefined
 
-  /** SEO - Afbeelding */
+  /** SEO - Image */
   seo_image?: Asset | undefined
 
-  /** SEO - Zoekwoorden */
+  /** SEO - Keywords */
   seo_keywords?: string[] | undefined
 }
 
@@ -49,43 +49,37 @@ export interface IPage extends Entry<IPageFields> {
 }
 
 export interface IProductFields {
-  /** Naam */
+  /** Name */
   name: string
 
-  /** URL */
-  url: string
+  /** Slug */
+  slug: string
 
-  /** Categorie */
-  category: "tafels" | "buitenmeubels" | "projecten"
-
-  /** Tonen op homepage */
+  /** Show on hompage */
   homepage: boolean
 
-  /** Opleverdatum */
-  deliveryDate: string
-
-  /** Omschrijving */
+  /** Description */
   description?: string | undefined
 
-  /** Hoofdafbeelding */
+  /** Main Image */
   mainImage: Asset
 
-  /** Sfeerbeelden */
+  /** Atmospheric Images */
   atmosphericImages?: Asset[] | undefined
 
-  /** SEO - Titel */
+  /** SEO - Title */
   seo_title?: string | undefined
 
-  /** SEO - Omschrijving */
+  /** SEO - Description */
   seo_description?: string | undefined
 
   /** SEO - URL (canonical) */
   seo_url?: string | undefined
 
-  /** SEO - Afbeelding */
+  /** SEO - Image */
   seo_image?: Asset | undefined
 
-  /** SEO - Zoekwoorden */
+  /** SEO - Keywords */
   seo_keywords?: string[] | undefined
 }
 
@@ -107,28 +101,28 @@ export interface IProduct extends Entry<IProductFields> {
 }
 
 export interface ISiteMetadataFields {
-  /** Bedrijfsnaam */
+  /** Company name */
   client_name: string
 
-  /** Adres */
+  /** Address */
   client_address?: string | undefined
 
-  /** Postcode */
+  /** Zip code */
   client_zipCode?: string | undefined
 
-  /** Plaatsnaam */
+  /** City */
   client_city?: string | undefined
 
-  /** Telefoonnummer */
+  /** Phone number */
   client_phone?: string | undefined
 
-  /** E-mailadres */
+  /** Email address */
   client_email: string
 
-  /** Bankrekeningnummer */
+  /** Bank account */
   client_bankAccount?: string | undefined
 
-  /** Openingstijden */
+  /** Opening hours */
   client_openingHours?: string | undefined
 
   /** Webshop */
@@ -149,19 +143,19 @@ export interface ISiteMetadataFields {
   /** Social media - YouTube */
   client_socialMediaYouTube?: string | undefined
 
-  /** SEO - Titel */
+  /** SEO - Title */
   seo_title: string
 
-  /** SEO - Omschrijving */
+  /** SEO - Description */
   seo_description: string
 
   /** SEO - URL */
   seo_url: string
 
-  /** SEO - Afbeelding */
+  /** SEO - Image */
   seo_image?: Asset | undefined
 
-  /** SEO - Zoekwoorden */
+  /** SEO - Keywords */
   seo_keywords?: string[] | undefined
 }
 
@@ -183,16 +177,16 @@ export interface ISiteMetadata extends Entry<ISiteMetadataFields> {
 }
 
 export interface ISiteNavigationFields {
-  /** Naam */
+  /** Name */
   name: string
 
   /** Code */
   code?: string | undefined
 
-  /** Pagina */
+  /** Page */
   page?: IPage | undefined
 
-  /** Subnavigatie */
+  /** Sub navigation */
   subNavItems?: ISiteNavigation[] | undefined
 }
 

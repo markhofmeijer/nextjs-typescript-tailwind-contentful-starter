@@ -13,7 +13,7 @@ export default async function getProductSlugs(
   const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
     order: reverse ? "-sys.createdAt" : "sys.createdAt",
-    select: "fields.url",
+    select: "fields.slug",
   })
 
   return entries.items.map(productParser)

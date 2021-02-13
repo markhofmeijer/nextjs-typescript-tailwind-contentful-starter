@@ -13,7 +13,7 @@ export default async function getHomepageProducts(
   const entries: EntryCollection<IProductFields> = await getClient(preview).getEntries({
     content_type: "product",
     "fields.homepage": true,
-    order: reverse ? "-fields.deliveryDate" : "fields.deliveryDate",
+    order: reverse ? "-sys.createdAt" : "sys.createdAt",
   })
 
   return entries.items.map(productParser)

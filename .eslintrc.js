@@ -33,12 +33,6 @@ module.exports = {
       `error`,
       {
         endOfLine: `auto`,
-        // printWidth: 100,
-        // semi: false,
-        // useTabs: true,
-        // arrowParens: `avoid`,
-        // trailingComma: `es5`,
-        // singleQuote: false,
       },
     ],
   },
@@ -50,27 +44,4 @@ module.exports = {
       },
     },
   ],
-
-  // rules: {
-  // 	quotes: `off`,
-  // 	"@typescript-eslint/quotes": [
-  // 		2,
-  // 		`backtick`,
-  // 		{
-  // 			avoidEscape: true,
-  // 		},
-  // 	],
-  // 	"prettier/prettier": [
-  // 		`error`,
-  // 		{
-  // 			endOfLine: `auto`,
-  // 			printWidth: 100,
-  // 			semi: false,
-  // 			useTabs: true,
-  // 			arrowParens: `avoid`,
-  // 			// trailingComma: `es5`,
-  // 			// singleQuote: false,
-  // 		},
-  // 	],
-  // },
 }

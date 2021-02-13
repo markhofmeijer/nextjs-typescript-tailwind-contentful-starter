@@ -9,7 +9,7 @@ export default function navigationItemParser({
 }: Entry<ISiteNavigationFields>): INavigationItem {
   if (!fields) return
 
-  const slug = fields.page && fields.page.sys.type !== "Link" ? fields.page.fields.url : null
+  const slug = fields.page && fields.page.sys.type !== "Link" ? fields.page.fields.slug : null
 
   const subItems = fields.subNavItems
     ?.filter(item => item.sys.type !== "Link")

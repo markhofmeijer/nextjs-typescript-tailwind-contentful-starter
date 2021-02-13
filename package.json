@@ -1,7 +1,6 @@
 {
-  "name": "jswooddesign.nl",
-  "version": "1.0.0",
-  "private": true,
+  "name": "nextjs-typescript-tailwind-contentful-starter",
+  "version": "0.1.0",
   "author": {
     "name": "Click-Designs",
     "email": "sales@click-designs.nl",
@@ -25,7 +24,6 @@
   "dependencies": {
     "contentful": "^8.1.7",
     "next": "^10.0.5",
-    "next-pwa": "^5.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rehype-react": "^6.1.0",

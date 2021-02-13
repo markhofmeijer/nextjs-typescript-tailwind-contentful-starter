@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   purge: [
     "./src/pages/**/*.ts",
@@ -9,17 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
-      },
-      colors: {
-        primary: {
-          lighter: "#d3d1c5",
-          DEFAULT: "#afab96",
-          dark: "#958f72",
-        },
-        secondary: {
-          DEFAULT: "#e5e5e5",
-        },
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },

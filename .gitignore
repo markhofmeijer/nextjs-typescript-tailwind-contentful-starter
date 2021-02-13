@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# vscode
+.vscode
+
 # dependencies
 /node_modules
 /.pnp
@@ -33,5 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# contentful
+/config/contentful/export.json
+/config/contentful/import.json
+
 # public
-public/sitemap.xml
+/public/sitemap.xml

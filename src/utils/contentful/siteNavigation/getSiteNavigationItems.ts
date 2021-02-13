@@ -24,5 +24,5 @@ export default async function getSiteNavigationItems(
 
   const root = entries.items.map(navigationItemParser)
 
-  return root[0].subItems
+  return root.length > 0 ? root[0].subItems : []
 }

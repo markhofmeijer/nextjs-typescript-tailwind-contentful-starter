@@ -15,10 +15,8 @@ export default function productParser({ sys, fields }: Entry<IProductFields>): I
   return {
     id: sys.id,
     name: fields.name,
-    slug: fields.url,
-    category: fields.category,
+    slug: fields.slug,
     homepage: fields.homepage,
-    deliveryDate: fields.deliveryDate,
     description: fields.description ?? null,
     mainImage: fields.mainImage ? (mediaParser(fields.mainImage) as IMediaImage) : null,
     atmosphericImages: atmosphericImages ?? null,

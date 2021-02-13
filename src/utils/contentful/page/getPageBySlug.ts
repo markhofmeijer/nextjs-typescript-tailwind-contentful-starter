@@ -14,7 +14,7 @@ export default async function getPageBySlug(
 
   const entries: EntryCollection<IPageFields> = await getClient(preview).getEntries({
     content_type: "page",
-    "fields.url": slug === "/" ? "home" : slug,
+    "fields.slug": slug === "/" ? "home" : slug,
   })
 
   if (entries.items.length === 0) return null

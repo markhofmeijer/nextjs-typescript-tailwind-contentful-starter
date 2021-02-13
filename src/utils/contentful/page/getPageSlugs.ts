@@ -9,7 +9,7 @@ import { IPage } from "@/types/page"
 export default async function getPageSlugs(preview = false): Promise<IPage[]> {
   const entries: EntryCollection<IPageFields> = await getClient(preview).getEntries({
     content_type: "page",
-    select: "fields.url",
+    select: "fields.slug",
   })
 
   return entries.items.map(pageParser)
