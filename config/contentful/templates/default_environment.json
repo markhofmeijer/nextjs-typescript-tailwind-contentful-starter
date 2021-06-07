@@ -6,13 +6,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "uzwel7qn3975"
+            "id": "ru8w9dtcrtv4"
           }
         },
-        "id": "page",
+        "id": "product",
         "type": "ContentType",
-        "createdAt": "2020-12-01T19:10:33.034Z",
-        "updatedAt": "2021-01-18T22:20:56.882Z",
+        "createdAt": "2020-11-10T20:26:27.146Z",
+        "updatedAt": "2021-02-13T14:03:55.699Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,30 +20,231 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 13,
-        "publishedAt": "2021-01-18T22:20:56.882Z",
-        "firstPublishedAt": "2020-12-01T19:10:36.915Z",
+        "publishedVersion": 35,
+        "publishedAt": "2021-02-13T14:03:55.699Z",
+        "firstPublishedAt": "2020-11-10T20:26:27.764Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
-        "publishedCounter": 7,
-        "version": 14,
+        "publishedCounter": 18,
+        "version": 36,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Product",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "homepage",
+          "name": "Show on hompage",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "mainImage",
+          "name": "Main Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "atmosphericImages",
+          "name": "Atmospheric Images",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Asset"
+          }
+        },
+        {
+          "id": "seo_title",
+          "name": "SEO - Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 60
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "seo_description",
+          "name": "SEO - Description",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": 50,
+                "max": 160
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "seo_url",
+          "name": "SEO - URL (canonical)",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "seo_image",
+          "name": "SEO - Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "seo_keywords",
+          "name": "SEO - Keywords",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "ru8w9dtcrtv4"
+          }
+        },
+        "id": "page",
+        "type": "ContentType",
+        "createdAt": "2020-11-24T15:35:39.449Z",
+        "updatedAt": "2021-02-13T13:26:38.378Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 15,
+        "publishedAt": "2021-02-13T13:26:38.378Z",
+        "firstPublishedAt": "2020-11-24T15:35:39.794Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1jfAviAENIvZtPzbif5C9i"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1jfAviAENIvZtPzbif5C9i"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 16,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         }
       },
@@ -53,17 +254,18 @@
       "fields": [
         {
           "id": "title",
-          "name": "Paginatitel",
+          "name": "Title",
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
-          "id": "url",
-          "name": "URL",
+          "id": "slug",
+          "name": "Slug",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -77,28 +279,30 @@
         },
         {
           "id": "image",
-          "name": "Afbeelding",
+          "name": "Image",
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
         },
         {
           "id": "description",
-          "name": "Vrije tekst",
+          "name": "Description",
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "seo_title",
-          "name": "SEO - Titel",
+          "name": "SEO - Title",
           "type": "Symbol",
           "localized": false,
           "required": false,
@@ -114,7 +318,7 @@
         },
         {
           "id": "seo_description",
-          "name": "SEO - Omschrijving",
+          "name": "SEO - Description",
           "type": "Symbol",
           "localized": false,
           "required": false,
@@ -135,33 +339,37 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "seo_image",
-          "name": "SEO - Afbeelding",
+          "name": "SEO - Image",
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
         },
         {
           "id": "seo_keywords",
-          "name": "SEO - Zoekwoorden",
+          "name": "SEO - Keywords",
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Symbol",
-            "validations": []
+            "validations": [
+            ]
           }
         }
       ]
@@ -172,228 +380,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "uzwel7qn3975"
-          }
-        },
-        "id": "product",
-        "type": "ContentType",
-        "createdAt": "2020-12-01T19:10:33.039Z",
-        "updatedAt": "2021-01-26T20:53:50.837Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 5,
-        "publishedAt": "2021-01-26T20:53:50.837Z",
-        "firstPublishedAt": "2020-12-01T19:10:36.444Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
-          }
-        },
-        "publishedCounter": 3,
-        "version": 6,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
-          }
-        }
-      },
-      "displayField": "name",
-      "name": "Product",
-      "description": "",
-      "fields": [
-        {
-          "id": "name",
-          "name": "Naam",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "url",
-          "name": "URL",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "category",
-          "name": "Categorie",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "in": ["tafels", "buitenmeubels", "projecten"]
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "homepage",
-          "name": "Tonen op homepage",
-          "type": "Boolean",
-          "localized": false,
-          "required": true,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "deliveryDate",
-          "name": "Opleverdatum",
-          "type": "Date",
-          "localized": false,
-          "required": true,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "description",
-          "name": "Omschrijving",
-          "type": "Text",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "mainImage",
-          "name": "Hoofdafbeelding",
-          "type": "Link",
-          "localized": false,
-          "required": true,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "linkType": "Asset"
-        },
-        {
-          "id": "atmosphericImages",
-          "name": "Sfeerbeelden",
-          "type": "Array",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "items": {
-            "type": "Link",
-            "validations": [],
-            "linkType": "Asset"
-          }
-        },
-        {
-          "id": "seo_title",
-          "name": "SEO - Titel",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "size": {
-                "max": 60
-              }
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "seo_description",
-          "name": "SEO - Omschrijving",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "size": {
-                "min": 50,
-                "max": 160
-              }
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "seo_url",
-          "name": "SEO - URL (canonical)",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "seo_image",
-          "name": "SEO - Afbeelding",
-          "type": "Link",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "linkType": "Asset"
-        },
-        {
-          "id": "seo_keywords",
-          "name": "SEO - Zoekwoorden",
-          "type": "Array",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "items": {
-            "type": "Symbol",
-            "validations": []
-          }
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "uzwel7qn3975"
+            "id": "ru8w9dtcrtv4"
           }
         },
         "id": "siteMetadata",
         "type": "ContentType",
-        "createdAt": "2021-01-15T10:10:14.636Z",
-        "updatedAt": "2021-01-18T20:38:46.749Z",
+        "createdAt": "2021-02-13T10:09:26.663Z",
+        "updatedAt": "2021-02-13T13:35:27.492Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -401,30 +394,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 29,
-        "publishedAt": "2021-01-18T20:38:46.749Z",
-        "firstPublishedAt": "2021-01-15T10:10:15.368Z",
+        "publishedVersion": 3,
+        "publishedAt": "2021-02-13T13:35:27.491Z",
+        "firstPublishedAt": "2021-02-13T10:09:30.978Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
-        "publishedCounter": 15,
-        "version": 30,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         }
       },
@@ -434,81 +427,89 @@
       "fields": [
         {
           "id": "client_name",
-          "name": "Bedrijfsnaam",
+          "name": "Company name",
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_address",
-          "name": "Adres",
+          "name": "Address",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_zipCode",
-          "name": "Postcode",
+          "name": "Zip code",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_city",
-          "name": "Plaatsnaam",
+          "name": "City",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_phone",
-          "name": "Telefoonnummer",
+          "name": "Phone number",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_email",
-          "name": "E-mailadres",
+          "name": "Email address",
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_bankAccount",
-          "name": "Bankrekeningnummer",
+          "name": "Bank account",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "client_openingHours",
-          "name": "Openingstijden",
+          "name": "Opening hours",
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -518,7 +519,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -528,7 +530,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -538,7 +541,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -548,7 +552,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -558,7 +563,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -568,13 +574,14 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "seo_title",
-          "name": "SEO - Titel",
+          "name": "SEO - Title",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -590,7 +597,7 @@
         },
         {
           "id": "seo_description",
-          "name": "SEO - Omschrijving",
+          "name": "SEO - Description",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -611,33 +618,37 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
         {
           "id": "seo_image",
-          "name": "SEO - Afbeelding",
+          "name": "SEO - Image",
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
         },
         {
           "id": "seo_keywords",
-          "name": "SEO - Zoekwoorden",
+          "name": "SEO - Keywords",
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Symbol",
-            "validations": []
+            "validations": [
+            ]
           }
         }
       ]
@@ -648,13 +659,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "uzwel7qn3975"
+            "id": "ru8w9dtcrtv4"
           }
         },
         "id": "siteNavigation",
         "type": "ContentType",
-        "createdAt": "2021-01-15T10:54:40.896Z",
-        "updatedAt": "2021-01-15T11:25:35.780Z",
+        "createdAt": "2021-02-13T10:09:26.749Z",
+        "updatedAt": "2021-02-13T13:36:42.217Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -662,30 +673,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2021-01-15T11:25:35.780Z",
-        "firstPublishedAt": "2021-01-15T10:54:41.300Z",
+        "publishedVersion": 3,
+        "publishedAt": "2021-02-13T13:36:42.217Z",
+        "firstPublishedAt": "2021-02-13T10:09:30.676Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
-        "publishedCounter": 9,
-        "version": 18,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         }
       },
@@ -695,7 +706,7 @@
       "fields": [
         {
           "id": "name",
-          "name": "Naam",
+          "name": "Name",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -725,13 +736,15 @@
         },
         {
           "id": "page",
-          "name": "Pagina",
+          "name": "Page",
           "type": "Link",
           "localized": false,
           "required": false,
           "validations": [
             {
-              "linkContentType": ["page"]
+              "linkContentType": [
+                "page"
+              ]
             }
           ],
           "disabled": false,
@@ -740,18 +753,21 @@
         },
         {
           "id": "subNavItems",
-          "name": "Subnavigatie",
+          "name": "Sub navigation",
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Link",
             "validations": [
               {
-                "linkContentType": ["siteNavigation"]
+                "linkContentType": [
+                  "siteNavigation"
+                ]
               }
             ],
             "linkType": "Entry"
@@ -760,7 +776,8 @@
       ]
     }
   ],
-  "tags": [],
+  "tags": [
+  ],
   "editorInterfaces": [
     {
       "sys": {
@@ -768,132 +785,24 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": "uzwel7qn3975",
+            "id": "ru8w9dtcrtv4",
             "type": "Link",
             "linkType": "Space"
           }
         },
-        "version": 14,
-        "createdAt": "2020-12-01T19:10:37.061Z",
+        "version": 36,
+        "createdAt": "2020-11-10T20:26:27.886Z",
         "createdBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-01-18T22:20:57.802Z",
+        "updatedAt": "2021-02-13T14:03:56.261Z",
         "updatedBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "page",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "title",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "url",
-          "widgetId": "slugEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "image",
-          "widgetId": "assetLinkEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "description",
-          "widgetId": "markdown",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "seo_title",
-          "settings": {
-            "helpText": "Let op! Deze titel zal de algemene titel op websiteniveau overschrijven."
-          },
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "seo_description",
-          "settings": {
-            "helpText": "Let op! Deze titel zal de algemene omschrijving op websiteniveau overschrijven."
-          },
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "seo_url",
-          "settings": {
-            "helpText": "Let op! Deze titel zal de algemene URL op websiteniveau overschrijven."
-          },
-          "widgetId": "urlEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "seo_image",
-          "settings": {
-            "helpText": "Let op! Deze titel zal de algemene afbeelding op websiteniveau overschrijven.",
-            "showLinkEntityAction": true,
-            "showCreateEntityAction": true
-          },
-          "widgetId": "assetLinkEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "seo_keywords",
-          "settings": {
-            "helpText": "Deze zoekwoorden zullen de algemene zoekwoorden op websiteniveau aanvullen (niet overschrijven)."
-          },
-          "widgetId": "tagEditor",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "uzwel7qn3975",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 6,
-        "createdAt": "2020-12-01T19:10:36.675Z",
-        "createdBy": {
-          "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2021-01-26T20:53:51.750Z",
-        "updatedBy": {
-          "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
@@ -923,16 +832,8 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "url",
+          "fieldId": "slug",
           "widgetId": "slugEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "category",
-          "settings": {
-            "helpText": "Categorie waaronder het product geplaatst moet worden op de website"
-          },
-          "widgetId": "dropdown",
           "widgetNamespace": "builtin"
         },
         {
@@ -943,16 +844,6 @@
             "falseLabel": "Nee"
           },
           "widgetId": "boolean",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "deliveryDate",
-          "settings": {
-            "ampm": "24",
-            "format": "dateonly",
-            "helpText": "Datum wanneer product/project is opgeleverd (bepaald volgorde op website)"
-          },
-          "widgetId": "datePicker",
           "widgetNamespace": "builtin"
         },
         {
@@ -1020,24 +911,132 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": "uzwel7qn3975",
+            "id": "ru8w9dtcrtv4",
             "type": "Link",
             "linkType": "Space"
           }
         },
-        "version": 30,
-        "createdAt": "2021-01-15T10:10:15.507Z",
+        "version": 16,
+        "createdAt": "2020-11-24T15:35:39.906Z",
         "createdBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-01-18T20:38:49.396Z",
+        "updatedAt": "2021-02-13T13:26:38.957Z",
         "updatedBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "page",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seo_title",
+          "settings": {
+            "helpText": "Let op! Deze titel zal de algemene titel op websiteniveau overschrijven."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seo_description",
+          "settings": {
+            "helpText": "Let op! Deze titel zal de algemene omschrijving op websiteniveau overschrijven."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seo_url",
+          "settings": {
+            "helpText": "Let op! Deze titel zal de algemene URL op websiteniveau overschrijven."
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seo_image",
+          "settings": {
+            "helpText": "Let op! Deze titel zal de algemene afbeelding op websiteniveau overschrijven.",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seo_keywords",
+          "settings": {
+            "helpText": "Deze zoekwoorden zullen de algemene zoekwoorden op websiteniveau aanvullen (niet overschrijven)."
+          },
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "ru8w9dtcrtv4",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2021-02-13T10:09:31.110Z",
+        "createdBy": {
+          "sys": {
+            "id": "1jfAviAENIvZtPzbif5C9i",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2021-02-13T13:35:28.582Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
@@ -1057,38 +1056,6 @@
           }
         }
       },
-      "sidebar": [
-        {
-          "settings": {},
-          "widgetId": "publication-widget",
-          "widgetNamespace": "sidebar-builtin"
-        },
-        {
-          "settings": {},
-          "widgetId": "translation-widget",
-          "widgetNamespace": "sidebar-builtin"
-        },
-        {
-          "settings": {},
-          "widgetId": "versions-widget",
-          "widgetNamespace": "sidebar-builtin"
-        },
-        {
-          "settings": {},
-          "widgetId": "users-widget",
-          "widgetNamespace": "sidebar-builtin"
-        },
-        {
-          "disabled": true,
-          "widgetId": "content-preview-widget",
-          "widgetNamespace": "sidebar-builtin"
-        },
-        {
-          "disabled": true,
-          "widgetId": "incoming-links-widget",
-          "widgetNamespace": "sidebar-builtin"
-        }
-      ],
       "controls": [
         {
           "fieldId": "client_name",
@@ -1193,24 +1160,24 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": "uzwel7qn3975",
+            "id": "ru8w9dtcrtv4",
             "type": "Link",
             "linkType": "Space"
           }
         },
-        "version": 18,
-        "createdAt": "2021-01-15T10:54:41.926Z",
+        "version": 4,
+        "createdAt": "2021-02-13T10:09:30.763Z",
         "createdBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-01-15T11:25:36.288Z",
+        "updatedAt": "2021-02-13T13:36:43.099Z",
         "updatedBy": {
           "sys": {
-            "id": "4liyI4AJIE0irD791HPrhR",
+            "id": "1jfAviAENIvZtPzbif5C9i",
             "type": "Link",
             "linkType": "User"
           }
@@ -1276,13 +1243,13 @@
       "optional": false,
       "sys": {
         "type": "Locale",
-        "id": "7egjrIsRhX5NHm3Ej81HML",
-        "version": 3,
+        "id": "6eKBqOvnRstMCX3N5RKKr2",
+        "version": 2,
         "space": {
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "uzwel7qn3975"
+            "id": "ru8w9dtcrtv4"
           }
         },
         "environment": {
@@ -1290,25 +1257,25 @@
             "type": "Link",
             "linkType": "Environment",
             "id": "master",
-            "uuid": "b1789223-f8d6-4d4d-9d07-e7d96d11ae83"
+            "uuid": "90f37c30-ea44-4cfc-a108-16e8871f5e30"
           }
         },
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
-        "createdAt": "2020-12-01T07:51:22Z",
+        "createdAt": "2020-11-10T20:18:20Z",
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "4liyI4AJIE0irD791HPrhR"
+            "id": "1jfAviAENIvZtPzbif5C9i"
           }
         },
-        "updatedAt": "2020-12-01T19:10:16Z"
+        "updatedAt": "2020-11-10T20:44:31Z"
       }
     }
   ]
