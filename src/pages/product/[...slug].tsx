@@ -43,8 +43,23 @@ const Home: React.FC<IAppDataProps> = ({ data }) => {
             className="rounded-2xl"
           />
         </div>
-        <div>
+        <div className="mb-8">
           <Markdown src={product.description} />
+        </div>
+        <div className="mb-4 flex">
+          {product.atmosphericImages.map(image => (
+            <div key={image.id} className="mr-4 p-8 border border-gray-700 rounded-lg">
+              <div className="relative h-64 w-64">
+                <Image
+                  src={image.url}
+                  alt={image.description ?? image.title}
+                  layout="fill"
+                  objectFit="contain"
+                  quality="80"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </main>
 
