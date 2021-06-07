@@ -4,6 +4,7 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 
+import { PreviewBanner } from "@/components/modules/Banner"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteNavigationItems from "@/utils/contentful/siteNavigation/getSiteNavigationItems"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
@@ -22,6 +23,7 @@ const Home: React.FC<IAppDataProps> = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {data.preview ? <PreviewBanner /> : null}
       <main className="my-12 mx-auto w-1/2">
         <h1 className="text-3xl font-bold uppercase mb-4">Next.js Starter</h1>
         <h2 className="text-2xl font-bold">Features</h2>

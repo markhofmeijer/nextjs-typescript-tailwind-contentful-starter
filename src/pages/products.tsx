@@ -4,6 +4,7 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 
+import { PreviewBanner } from "@/components/modules/Banner"
 import getProducts from "@/utils/contentful/product/getProducts"
 
 import { IAppData, IAppDataProps } from "@/types/app"
@@ -16,6 +17,7 @@ const Home: React.FC<IAppDataProps> = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {data.preview ? <PreviewBanner /> : null}
       <main className="my-12 mx-auto w-1/2">
         <Link href="/">
           <a className="text-blue-500 underline">Back</a>

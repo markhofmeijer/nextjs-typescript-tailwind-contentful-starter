@@ -3,6 +3,7 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import Link from "next/link"
 
+import { PreviewBanner } from "@/components/modules/Banner"
 import getPageSlugs from "@/utils/contentful/page/getPageSlugs"
 import getPageBySlug from "@/utils/contentful/page/getPageBySlug"
 import getSiteMetadata from "@/utils/contentful/siteMetadata/getSiteMetadata"
@@ -21,6 +22,7 @@ const Home: React.FC<IAppDataProps> = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {data.preview ? <PreviewBanner /> : null}
       <main className="my-12 mx-auto w-1/2">
         <Link href="/">
           <a className="text-blue-500 underline">Back</a>
