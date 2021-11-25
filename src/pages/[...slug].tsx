@@ -72,7 +72,9 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, params }
 export const getStaticPaths: GetStaticPaths = async () => {
   const pageSlugs = await getPageSlugs()
   const paths =
-    pageSlugs.filter(({ slug }) => !["/"].includes(slug)).map(({ slug }) => `/${slug}`) ?? []
+    pageSlugs
+      .filter(({ slug }) => !["/", "products"].includes(slug))
+      .map(({ slug }) => `/${slug}`) ?? []
 
   return {
     paths,
