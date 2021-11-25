@@ -1,8 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## nextjs-typescript-tailwind-contentful-starter
+
+This is a project bootstrapped with:
+
+- [Next.js](https://nextjs.org/) - Open source React framework built by Vercel, Google and Facebook.
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript at Any Scale.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
+- [ESLint](https://eslint.org/) - Pluggable JavaScript linter.
+- [Prettier](https://prettier.io/) - Opinionated Code Formatter.
+- [Contentful](https://www.contentful.com/) - API-first content platform to build digital experiences.
 
 ## Getting Started
 
-First, run the development server:
+First, clone this repository.
+
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -14,21 +25,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) - learn TypeScript with the official docs.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn Tailwind the way that best matches your learning style.
+- [ESLint User Guide](https://eslint.org/docs/user-guide/) - intended for those who wish to use ESLint as an end-user.
+- [ESLint Developer Guide](https://eslint.org/docs/developer-guide/) - intended for those who wish to contribute code to or create their own rules for ESLint.
+- [Prettier Documentation](https://prettier.io/docs/en/) - learn Prettier with the official docs.
+- [Contentful Developer Portal](https://www.contentful.com/developers/) - the go-to place for all developer related content and social activities.

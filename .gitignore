@@ -35,3 +35,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# contentful
+/config/contentful/export.json
+/config/contentful/import.json
+
+# public
+/public/sitemap.xml
