@@ -44,7 +44,7 @@ const Home: NextPage<IAppDataProps> = ({ data }) => {
             <li key={item.id}>
               -{" "}
               <Link href={`/${item.slug}`}>
-                <a className="text-blue-500 underline">{item.name}</a>
+                <a className="text-blue-700 underline">{item.name}</a>
               </Link>
             </li>
           ))}
@@ -56,7 +56,7 @@ const Home: NextPage<IAppDataProps> = ({ data }) => {
         <div className="mt-2 flex">
           {data.products?.map(product => (
             <Link key={product.id} href={`/product/${product.slug}`}>
-              <a className="text-blue-500 underline">
+              <a className="text-blue-700 underline">
                 <div className="mr-4 p-8 border border-gray-700 rounded-lg">
                   <div className="relative h-64 w-64">
                     {product.mainImage && product.mainImage.url ? (
