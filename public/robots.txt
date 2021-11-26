@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nextjs-typescript-tailwind-contentful-starter.vercel.app/sitemap.xml
