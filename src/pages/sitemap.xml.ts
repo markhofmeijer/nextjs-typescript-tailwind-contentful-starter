@@ -19,7 +19,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res, preview }) =
   sitemap.push(
     staticPages
       .map(page =>
-        formatSitemapRecord(page.seo.url ?? `${process.env.BASE_URL}/${page.slug}`, page.updatedAt)
+        formatSitemapRecord(
+          page.seo.url ?? `${process.env.BASE_URL}/${page.slug !== "/" ? page.slug : ""}`,
+          page.updatedAt
+        )
       )
       .join("")
   )
