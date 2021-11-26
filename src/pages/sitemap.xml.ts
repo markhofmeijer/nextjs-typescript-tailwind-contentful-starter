@@ -1,4 +1,3 @@
-// import React from "react"
 import { GetServerSideProps } from "next"
 
 import getPages from "@/utils/contentful/page/getPages"
