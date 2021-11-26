@@ -21,5 +21,6 @@ export default function productParser({ sys, fields }: Entry<IProductFields>): I
     mainImage: fields.mainImage ? (mediaParser(fields.mainImage) as IMediaImage) : null,
     atmosphericImages: atmosphericImages ?? null,
     seo: seoParser(fields),
+    updatedAt: sys.updatedAt,
   }
 }

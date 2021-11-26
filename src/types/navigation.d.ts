@@ -4,6 +4,7 @@ export interface INavigationItem {
   code: string | null
   slug: string | null
   subItems: INavigationItem[]
+  updatedAt: string
 }
 
 interface INavProps {

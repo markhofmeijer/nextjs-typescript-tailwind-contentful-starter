@@ -5,6 +5,7 @@ export interface IMediaItem {
   url?: string | null
   mimeType: string
   description?: string | null
+  updatedAt: string
 }
 
 export interface IMediaImage extends IMediaItem {

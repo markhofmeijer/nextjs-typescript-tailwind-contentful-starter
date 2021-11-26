@@ -10,4 +10,5 @@ export interface IProduct {
   mainImage: IMediaImage | null
   atmosphericImages?: IMediaImage[] | null
   seo: ISEO
+  updatedAt: string
 }

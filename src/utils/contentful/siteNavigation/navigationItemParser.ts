@@ -19,5 +19,6 @@ export default function navigationItemParser({
     code: fields.code ?? null,
     slug,
     subItems: subItems ?? [],
+    updatedAt: sys.updatedAt,
   }
 }

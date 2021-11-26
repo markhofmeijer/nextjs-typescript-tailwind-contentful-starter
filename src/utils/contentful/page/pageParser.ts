@@ -28,5 +28,6 @@ export default function pageParser({ sys, fields }: Entry<IPageFields>): IPage {
     language,
     locale,
     seo: seoParser(fields),
+    updatedAt: sys.updatedAt,
   }
 }

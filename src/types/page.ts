@@ -10,4 +10,5 @@ export interface IPage {
   language?: string | null
   locale?: string | null
   seo: ISEO
+  updatedAt: string
 }

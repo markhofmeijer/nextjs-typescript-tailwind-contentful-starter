@@ -10,6 +10,7 @@ export default function mediaParser({ sys, fields }: Asset): IMediaItem {
     url: `https:${fields.file.url}`,
     mimeType: fields.file.contentType,
     description: fields.description ?? null,
+    updatedAt: sys.updatedAt,
   }
 
   switch (fields.file.contentType) {

@@ -5,7 +5,7 @@ import seoParser from "../seo/seoParser"
 import { ISiteMetadataFields } from "@/types/contentful"
 import { IMetadata } from "@/types/metadata"
 
-export default function metadataParser({ fields }: Entry<ISiteMetadataFields>): IMetadata {
+export default function metadataParser({ sys, fields }: Entry<ISiteMetadataFields>): IMetadata {
   return {
     clientName: fields.client_name,
     clientAddress: fields.client_address ?? null,
@@ -22,5 +22,6 @@ export default function metadataParser({ fields }: Entry<ISiteMetadataFields>): 
     clientSocialMediaInstagram: fields.client_socialMediaInstagram ?? null,
     clientSocialMediaYouTube: fields.client_socialMediaYouTube ?? null,
     seo: seoParser(fields),
+    updatedAt: sys.updatedAt,
   }
 }

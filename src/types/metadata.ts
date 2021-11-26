@@ -16,4 +16,5 @@ export interface IMetadata {
   clientSocialMediaInstagram?: string | null
   clientSocialMediaYouTube?: string | null
   seo: ISEO
+  updatedAt: string
 }
